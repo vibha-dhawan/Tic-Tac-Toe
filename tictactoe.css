@@ -1,0 +1,78 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .background_image {
+    
+    background-image: url("https://image.shutterstock.com/image-illustration/abstract-textured-blue-on-background-260nw-629514740.jpg");
+  
+    
+    height: 100%; 
+  
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .heading{
+    text-align: center;
+    padding-top: 35px;
+  }
+  .head_text{
+    color:white;
+    font-size: 50px;
+    font-family:cursive;
+  }
+  #tableBoard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+table, td {
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: white;
+  
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+
+td {
+width: 100px;
+height: 100px;
+text-align: center;
+font-size: 40px;
+font-family:cursive;
+font-weight: bold;
+}
+
+.btnDesign{
+  
+  margin-top: 10px;
+}
+.wonText{
+  color:red;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 30px;
+}
+.span_text{
+  margin-left: 100px;
+  font-family: cursive;
+  color:red
+}
+#heading_modal{
+ margin-left: 90px;
+  font-family: cursive;
+  
+}
+#heading_modal2{
+  margin-left: 190px;
+   font-family: cursive;
+   
+ }
