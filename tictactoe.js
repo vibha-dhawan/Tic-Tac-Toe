@@ -76,20 +76,43 @@ var ticTacToe = angular.module('myApp', []);
       if(flag === ''){
         flag = true;
       }
+      if(flag==true){
+        if(check=='row'){
+          $("#rc"+row+"0, #rc"+row+"1, #rc"+row+"2").css({"color":"red","font-size":"50px"});
+        }
+        else if(check=='column'){
+          $("#rc0"+column+", #rc1"+column+", #rc2"+column).css({"color":"red","font-size":"50px"});
+        }
+      }
       return flag;
     }
   //function for diagonals
     function checkDiagonals(){
-      if(($scope.board[0][0] === player &&
+      var temp=false;
+      var diag="";
+      if($scope.board[0][0] === player &&
           $scope.board[1][1] === player &&
-         $scope.board[2][2] === player) ||
-         ($scope.board[0][2] === player &&
-         $scope.board[1][1] === player &&
-         $scope.board[2][0] === player)){
-        
-        return true;     
+         $scope.board[2][2] === player)
+         {
+        diag="left";
+        temp=true;     
       }
-      return false;
+      else if($scope.board[0][2] === player &&
+        $scope.board[1][1] === player &&
+        $scope.board[2][0] === player){
+          diag="right";
+          temp=true;
+        }
+      else{
+        temp=false;
+      }
+      if(temp==true){
+        if(diag=="left")
+        $("#rc00, #rc11, #rc22").css({"color":"red","font-size":"50px"});
+        else
+        $("#rc02, #rc11, #rc20").css({"color":"red","font-size":"50px"});
+      }
+      return temp;
     }
     //Refresh the game
   $scope.refresh = function() {
@@ -103,5 +126,6 @@ var ticTacToe = angular.module('myApp', []);
     $scope.won = '';
     move['X'] = 0;
     move['O'] = 0;
+    $("td").css({"color":"black","font-size":"40px","font-family":"cursive","font-weight":"bold"});
   }
   });

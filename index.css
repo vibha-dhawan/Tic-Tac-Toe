@@ -5,7 +5,7 @@ body, html {
 
 .background_image {
   
-  background-image: url("https://image.shutterstock.com/image-illustration/abstract-textured-blue-on-background-260nw-629514740.jpg");
+  background-image: url("https://i.pinimg.com/236x/c5/4b/9f/c54b9fcc4deb4e74703b642295eae68b.jpg");
 
   
   height: 100%; 
@@ -23,6 +23,9 @@ body, html {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color: white ;
+  }
+  .design_btn:hover{
+background-color: #F2F6A0;
   }
  
   .text{

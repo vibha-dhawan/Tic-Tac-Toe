@@ -18,30 +18,30 @@
 <!--HEADING -->
     <div class="heading">
         <span class="head_text">
-            <i>TIC-TAC-TOE</i></span>
+            <b><i>TIC-TAC-TOE</i></b></span>
     </div>
 
     <div id="tableBoard" >
-    
+         
       <!-- cross-table -->
       <table>
         <tr>
-          <td ng-click='play(0,0)'>{{board[0][0]}}</td>
-          <td ng-click='play(0,1)'>{{board[0][1]}}</td>
-          <td ng-click='play(0,2)'>{{board[0][2]}}</td>
+          <td ng-click='play(0,0)' id="rc00" >{{board[0][0]}}</td>
+          <td ng-click='play(0,1)' id="rc01" >{{board[0][1]}}</td>
+          <td ng-click='play(0,2)' id="rc02" >{{board[0][2]}}</td>
         </tr>
         <tr>
-          <td ng-click='play(1,0)'>{{board[1][0]}}</td>
-          <td ng-click='play(1,1)'>{{board[1][1]}}</td>
-          <td ng-click='play(1,2)'>{{board[1][2]}}</td>
+          <td ng-click='play(1,0)' id="rc10" >{{board[1][0]}}</td>
+          <td ng-click='play(1,1)' id="rc11" >{{board[1][1]}}</td>
+          <td ng-click='play(1,2)' id="rc12" >{{board[1][2]}}</td>
         </tr>
         <tr>
-          <td ng-click='play(2,0)'>{{board[2][0]}}</td>
-          <td ng-click='play(2,1)'>{{board[2][1]}}</td>
-          <td ng-click='play(2,2)'>{{board[2][2]}}</td>
+          <td ng-click='play(2,0)' id="rc20" >{{board[2][0]}}</td>
+          <td ng-click='play(2,1)' id="rc21" >{{board[2][1]}}</td>
+          <td ng-click='play(2,2)' id="rc22" >{{board[2][2]}}</td>
         </tr>
       </table>
-      <button class="btn btn-info btnDesign" ng-click='refresh()'>Reset</button>
+      <button class="btn btn-danger btnDesign" ng-click='refresh()'><b><i>RESET</i></b></button>
       
     </div>
     <div class="modal fade" id="myModal" data-keyboard="false">
@@ -50,7 +50,7 @@
           <!-- Modal Header -->
           <div class="modal-header">
             <h3 class="modal-title" id="title"><b id="heading_modal">CONGRATULATIONS!</b></h3>
-            <button type="button" class="close" id="close_btn" data-dismiss="modal">&times;</button>
+            <button type="button" class="close" id="close_btn1" data-dismiss="modal">&times;</button>
           </div>
 
           <!-- Modal body -->
@@ -66,7 +66,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h3 class="modal-title" id="title"><b id="heading_modal2">OPPS!</b></h3>
-                  <button type="button" class="close" id="close_btn" data-dismiss="modal">&times;</button>
+                  <button type="button" class="close" id="close_btn2" data-dismiss="modal">&times;</button>
                 </div>
       
                 <!-- Modal body -->
