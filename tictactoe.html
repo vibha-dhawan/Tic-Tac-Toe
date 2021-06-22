@@ -22,23 +22,51 @@
     </div>
 
     <div id="tableBoard" >
+      <svg ng-show="row0">
+        <line x1="-100" y1="40" x2="350" y2="40">
+    </svg>
+    <svg ng-show="row1">
+        <line x1="0" y1="140" x2="290" y2="140">
+    </svg>
+    <svg ng-show="row2">
+        <line x1="0" y1="240" x2="290" y2="240">
+    </svg>
+
+    <!-- COLUMNS -->
+    <svg ng-show="col0">
+        <line x1="45" y1="0" x2="45" y2="270">
+    </svg>
+    <svg ng-show="col1">
+        <line x1="145" y1="0" x2="145" y2="270">
+    </svg>
+    <svg ng-show="col2">
+        <line x1="245" y1="0" x2="245" y2="270">
+    </svg>
+
+    <!-- DIAGONALS -->
+    <svg ng-show="diag1">
+        <line x1="0" y1="0" x2="280" y2="275">
+    </svg>
+    <svg ng-show="diag2">
+        <line x1="280" y1="0" x2="0" y2="285">
+    </svg>
          
       <!-- cross-table -->
-      <table>
+      <table ng-class="[lineThrough]">
         <tr>
-          <td ng-click='play(0,0)' id="rc00" >{{board[0][0]}}</td>
-          <td ng-click='play(0,1)' id="rc01" >{{board[0][1]}}</td>
-          <td ng-click='play(0,2)' id="rc02" >{{board[0][2]}}</td>
+          <td ng-click='play(0,0)' ng-style="r00" >{{board[0][0]}}</td>
+          <td ng-click='play(0,1)' ng-style="r00" >{{board[0][1]}}</td>
+          <td ng-click='play(0,2)' ng-style="r00">{{board[0][2]}}</td>
         </tr>
         <tr>
-          <td ng-click='play(1,0)' id="rc10" >{{board[1][0]}}</td>
-          <td ng-click='play(1,1)' id="rc11" >{{board[1][1]}}</td>
-          <td ng-click='play(1,2)' id="rc12" >{{board[1][2]}}</td>
+          <td ng-click='play(1,0)' ng-style="r00">{{board[1][0]}}</td>
+          <td ng-click='play(1,1)' ng-style="r00">{{board[1][1]}}</td>
+          <td ng-click='play(1,2)' ng-style="r00">{{board[1][2]}}</td>
         </tr>
         <tr>
-          <td ng-click='play(2,0)' id="rc20" >{{board[2][0]}}</td>
-          <td ng-click='play(2,1)' id="rc21" >{{board[2][1]}}</td>
-          <td ng-click='play(2,2)' id="rc22" >{{board[2][2]}}</td>
+          <td ng-click='play(2,0)' ng-style="r00" >{{board[2][0]}}</td>
+          <td ng-click='play(2,1)' ng-style="r00" >{{board[2][1]}}</td>
+          <td ng-click='play(2,2)' ng-style="r00">{{board[2][2]}}</td>
         </tr>
       </table>
       <button class="btn btn-danger btnDesign" ng-click='refresh()'><b><i>RESET</i></b></button>

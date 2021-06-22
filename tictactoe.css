@@ -96,3 +96,12 @@ margin-top: -50px;
 #close_btn2{
 margin-top: -50px;
 }
+svg {
+height: 300px;
+width: 290px;
+position: absolute;
+}
+line {
+stroke: black;
+stroke-width: 4px;
+}

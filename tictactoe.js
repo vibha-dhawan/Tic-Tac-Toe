@@ -14,10 +14,15 @@ var ticTacToe = angular.module('myApp', []);
     move['X'] = 0;
     move['O'] = 0;
       
-    for(var x = 0; x < 3; x++){
+    for(let x = 0; x < 3; x++)
+    {
       $scope.board[x] = [];
       duplicate[x]=[];
+      $scope["col" + x] = false;
+      $scope["row" + x] = false;
+      $scope["diag" + x] = false;
     }  
+    
     //for not repeating
     $scope.play = function(x,y) {
       if($scope.won === ''){
@@ -49,8 +54,10 @@ var ticTacToe = angular.module('myApp', []);
     //win
     function checkWin(x,y) {
       if(checkRowColumn(x,y,'column')){
+        $scope["col" + y] = true;
         return true;
       } else if(checkRowColumn(x,y,'row')){
+        $scope["row" + x] = true;
         return true;
       } else if(checkDiagonals()) {
         return true;
@@ -78,10 +85,10 @@ var ticTacToe = angular.module('myApp', []);
       }
       if(flag==true){
         if(check=='row'){
-          $("#rc"+row+"0, #rc"+row+"1, #rc"+row+"2").css({"color":"red","font-size":"50px"});
+          $scope.r00={"color":"red","font-size":"50px"}
         }
-        else if(check=='column'){
-          $("#rc0"+column+", #rc1"+column+", #rc2"+column).css({"color":"red","font-size":"50px"});
+        if(check=='column'){
+          $scope.r00={"color":"red","font-size":"50px"}
         }
       }
       return flag;
@@ -94,24 +101,23 @@ var ticTacToe = angular.module('myApp', []);
           $scope.board[1][1] === player &&
          $scope.board[2][2] === player)
          {
+          $scope.diag1=true;
         diag="left";
-        temp=true;     
+        temp=true;   
+        $scope.r00={"color":"red","font-size":"50px"}  
       }
       else if($scope.board[0][2] === player &&
         $scope.board[1][1] === player &&
         $scope.board[2][0] === player){
+          $scope.diag2=true;
           diag="right";
           temp=true;
+          $scope.r00={"color":"red","font-size":"50px"}
         }
       else{
         temp=false;
       }
-      if(temp==true){
-        if(diag=="left")
-        $("#rc00, #rc11, #rc22").css({"color":"red","font-size":"50px"});
-        else
-        $("#rc02, #rc11, #rc20").css({"color":"red","font-size":"50px"});
-      }
+     
       return temp;
     }
     //Refresh the game
@@ -120,12 +126,15 @@ var ticTacToe = angular.module('myApp', []);
       for(var y = 0; y < 3; y++){
         $scope.board[x][y] = '';
         duplicate[x][y]='';
+        $scope["col" + x] = false;
+        $scope["row" + x] = false;
+        $scope["diag" + x] = false;
       }
     }
     player = 'O';
     $scope.won = '';
     move['X'] = 0;
     move['O'] = 0;
-    $("td").css({"color":"black","font-size":"40px","font-family":"cursive","font-weight":"bold"});
+    $scope.r00={"color":"black","font-size":"40px"}
   }
   });
